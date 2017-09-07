@@ -7,13 +7,13 @@
 </template>
 
 
-<script type="text/esmascript-6">
-	export default {
-		name: 'header'
-	}
+<script type="text/ecmascript-6">
+  export default {
+    name: 'header'
+  }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
+<style  scoped lang="stylus" rel="stylesheet/stylus">
 	@import "../../common/stylus/variable.styl"
 	@import "../../common/stylus/mixin.styl"
 	.header
