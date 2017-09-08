@@ -2,8 +2,8 @@ import 'babel-polyfill'
 import Vue from 'vue'
 import router from './router'
 import App from './App'
-import 'common/stylus/index.styl'
 import fastclick from 'fastclick'
+import 'common/stylus/index.styl'
 
 fastclick.attach(document.body)
 Vue.config.productionTip = false
