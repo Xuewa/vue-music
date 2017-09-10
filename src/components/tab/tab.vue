@@ -40,8 +40,8 @@
 	        color: $color-text-l
 	        display: block
 	        &.router-link-active
-	          color: #ffcd32
+	          color: $color-theme
 	          .tab-link
 	            height:100%
-	            border-bottom:2px solid #ffcd32
+	            border-bottom:2px solid $color-theme
 </style>
