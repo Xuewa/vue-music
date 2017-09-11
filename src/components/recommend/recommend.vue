@@ -18,7 +18,7 @@
 
 
 <script type="text/esmascript-6">
-	import Slider from 'components/slider/slider'
+	import Slider from 'base/slider/slider'
 	import {getRecommend} from 'api/recommend'
 	import {ERR_OK} from 'api/config'
 	export default {

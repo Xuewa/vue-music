@@ -25,7 +25,8 @@ module.exports = {
     alias: {
       'api': resolve('src/api'),
       'common': resolve('src/common'),
-      'components': resolve('src/components')
+      'components': resolve('src/components'),
+      'base': resolve('src/base')
     }
   },
   module: {
