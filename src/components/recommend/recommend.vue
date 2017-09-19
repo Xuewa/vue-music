@@ -1,10 +1,12 @@
 <template>
   <div class="recommend">
-    <div class="slider-cont" v-for="recommend in recmmends">
+    <div class="slider-cont" v-if="recommends.length">
       <slider>
-      	<a href="recommend.linkUrl">
-      		<img src="recommend.picUrl" alt="">
-      	</a>
+      	<div  v-for="recommend in recommends">
+	      	<a :href="recommend.linkUrl">
+	      		<img :src="recommend.picUrl" alt="">
+	      	</a>
+	    </div>
       </slider>
     </div>
     <div class="title-cont">
@@ -19,26 +21,38 @@
 
 <script type="text/esmascript-6">
 	import Slider from 'base/slider/slider'
-	import {getRecommend} from 'api/recommend'
+	import {getRecommend, getDiscList} from 'api/recommend'
 	import {ERR_OK} from 'api/config'
 	export default {
 	  data() {
 	    return {
-	      recommends: []
+	      recommends: [],
+	      discList: []
 	    }
 	  },
 	  created() {
 	    this._getRecommend()
+	    this._getDiscList()
 	  },
 	  methods: {
         _getRecommend() {
           getRecommend().then((res) => {
-            this.recommends = res.data.slider
-            console.log(res.data.slider)
+            if (res.code === ERR_OK) { 
+              this.recommends = res.data.slider
+            }
+          })
+        },
+        _getDiscList() {
+          getDiscList().then((res) => {
+            console.log(res)
+            if (res.code === ERR_OK) {
+              console.log(res.data.list)
+              this.discList = res.data.list
+            }
           })
         }
 	  },
-	  comonents: {
+	  components: {
 	    'slider': Slider
 	  }
 	}
@@ -51,7 +65,7 @@
 	.recommend
 		.slider-cont
 			display:block
-			height: 160px;
+			width:100%
 		.title-text
 			color: $color-theme;
 			line-height:65px;
