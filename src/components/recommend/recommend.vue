@@ -12,12 +12,21 @@
     <div class="title-cont">
     	<h2 class="title-text">热门歌单推荐</h2>
     </div>
-    <div class="songMenu-cont">
-    	<ul class="songMenus-list"></ul>
+    <div class="discList-cont">
+    	<ul class="discList-list">
+    		<li v-for="item in discList">
+    			<span class="discList-left">
+    				<img :src="item.imgurl" alt="" width="60">
+    			</span>
+    			<span class="discList-right">
+    				<h4 class="disc-name">{{item.creator.name}}</h4>
+    				<p class="disc-instruction">{{item.dissname}}</p>
+    			</span>
+    		</li>
+    	</ul>
     </div>
 </div>
 </template>
-
 
 <script type="text/esmascript-6">
 	import Slider from 'base/slider/slider'
@@ -62,14 +71,36 @@
 	@import "../../common/stylus/variable.styl"
 	@import "../../common/stylus/mixin.styl"
 
-	.recommend
-		.slider-cont
-			display:block
-			width:100%
-		.title-text
-			color: $color-theme;
-			line-height:65px;
-			height:65px;
-			text-align:center;
-			font-size: 14px;
+	.slider-cont
+		display:block
+		width:100%
+	.title-text
+		color: $color-theme;
+		line-height:65px;
+		height:65px;
+		text-align:center;
+		font-size: 14px;
+	.discList-list
+		li
+			display:flex
+			padding:0 20px 20px 20px
+			.discList-left
+				flex:0 0 60px
+				margin-right:20px
+				img
+					width:60px
+			.discList-right
+				flex:1
+				display:flex
+				flex-direction:column
+				justify-content: center
+				line-height:20px
+				font-size:14px
+				.disc-name
+					margin-bottom:8px
+				.disc-instruction
+					color:$color-text-d
+
+
+
 </style>
