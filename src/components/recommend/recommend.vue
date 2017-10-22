@@ -1,19 +1,21 @@
 <template>
   <div class="recommend">
-    <div class="slider-cont" v-if="recommends.length">
-      <slider>
-      	<div  v-for="recommend in recommends">
-	      	<a :href="recommend.linkUrl">
+    <scroller class="recommend-content" :data="discList">
+      <div>
+        <div class="slider-cont" v-if="recommends.length">
+          <slider>
+      	    <div  v-for="recommend in recommends">
+	      	  <a :href="recommend.linkUrl">
 	      		<img :src="recommend.picUrl" alt="">
-	      	</a>
-	    </div>
-      </slider>
-    </div>
-    <div class="title-cont">
-    	<h2 class="title-text">热门歌单推荐</h2>
-    </div>
-    <div class="discList-cont">
-    	<ul class="discList-list">
+	      	  </a>
+	        </div>
+          </slider>
+        </div>
+        <div class="title-cont">
+    	  <h2 class="title-text">热门歌单推荐</h2>
+        </div>
+        <div class="discList-cont">
+          <ul class="discList-list">
     		<li v-for="item in discList">
     			<span class="discList-left">
     				<img :src="item.imgurl" alt="" width="60">
@@ -23,13 +25,16 @@
     				<p class="disc-instruction">{{item.dissname}}</p>
     			</span>
     		</li>
-    	</ul>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
+    </scroller>
+  </div>
 </template>
 
 <script type="text/esmascript-6">
 	import Slider from 'base/slider/slider'
+	import Scroller from 'base/scroller/scroller'
 	import {getRecommend, getDiscList} from 'api/recommend'
 	import {ERR_OK} from 'api/config'
 	export default {
@@ -62,7 +67,8 @@
         }
 	  },
 	  components: {
-	    'slider': Slider
+	    'slider': Slider,
+	    'scroller': Scroller
 	  }
 	}
 </script>

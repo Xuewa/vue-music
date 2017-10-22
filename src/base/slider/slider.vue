@@ -53,6 +53,7 @@
 	  methods: {
 	    _setSliderWidth(isResize) {
 	      this.children = this.$refs.sliderGroup.children
+	      console.log(this.$refs.sliderGroup);
 	      let w = 0
 	      let singleSliderW = this.$refs.slider.clientWidth
 	      for (let i=0; i < this.children.length; i++){
