@@ -7,6 +7,7 @@
 
 <script type="text/esmascript-6">
 	import BScroll from 'better-scroll'
+
 	export default {
 	  props: {
         probeType: {
@@ -33,8 +34,8 @@
 	        return
 	      }
 	      this.scroller = new BScroll(this.$refs.wrapper,{
-	        click: this.click,
-	        probeType: this.probeType
+	        probeType: this.probeType,
+	        click: this.click
 	      })
 	      console.log(this.scroller)
 	    },

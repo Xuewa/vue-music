@@ -76,36 +76,43 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
 	@import "../../common/stylus/variable.styl"
 	@import "../../common/stylus/mixin.styl"
-
-	.slider-cont
-		display:block
-		width:100%
-	.title-text
-		color: $color-theme;
-		line-height:65px;
-		height:65px;
-		text-align:center;
-		font-size: 14px;
-	.discList-list
-		li
-			display:flex
-			padding:0 20px 20px 20px
-			.discList-left
-				flex:0 0 60px
-				margin-right:20px
-				img
-					width:60px
-			.discList-right
-				flex:1
-				display:flex
-				flex-direction:column
-				justify-content: center
-				line-height:20px
-				font-size:14px
-				.disc-name
-					margin-bottom:8px
-				.disc-instruction
-					color:$color-text-d
+	.recommend
+		position: fixed;
+		width: 100%;
+		top: 88px;
+		bottom: 0;
+	  .recommend-content
+		  height: 100%
+		  overflow: hidden
+		.slider-cont
+		  display:block
+		  width:100%
+		.title-text
+		  color: $color-theme
+		  line-height:65px
+		  height:65px
+		  text-align:center
+		  font-size: 14px
+		.discList-list
+			li
+			  display:flex
+			  padding:0 20px 20px 20px
+				.discList-left
+				  flex:0 0 60px
+				  margin-right:20px
+					img
+					  width:60px
+				.discList-right
+				  flex:1
+				  display:flex
+				  flex-direction:column
+				  justify-content: center
+				  line-height:20px
+				  font-size:14px
+					.disc-name
+					  margin-bottom:8px
+					.disc-instruction
+					  color:$color-text-d
 
 
 
